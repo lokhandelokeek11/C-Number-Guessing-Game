@@ -3,25 +3,25 @@
 #include<time.h>
 
 int main(){
-    int number, guess, nguesses=1;
+    int number, guessednumber, noofguesses=1;
     srand(time(0));
     number = rand()%100 + 1; 
     // printf("The number is %d\n", number);
     
     do{
         printf("Guess the number between 1 to 100\n");
-        scanf("%d", &guess);
-        if(guess>number){
+        scanf("%d", &guessednumber);
+        if(guessednumber>number){
             printf("Pls, Lower number please!\n");
         }
-        else if(guess<number){
+        else if(guessednumber<number){
             printf("Pls, Higher number please!\n");
         }
         else{
-            printf("Hurray !! You guessed it in %d attempts\n", nguesses);
+            printf("Hurray !! You guessed it in %d attempts\n", noofguesses);
         }
-        nguesses++;
+        noofguesses++;
     }
-    while(guess!=number);
+    while(guessednumber!=number);
     return 0;
 }
